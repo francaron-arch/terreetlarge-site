@@ -1,0 +1,115 @@
+/* Terre & Large — feuille de style unique. Couleurs reprises de l'affiche « Bloc océan ». */
+@font-face{font-family:"Jost";src:url(fonts/jost-latin-wght-normal.woff2) format("woff2");font-weight:300 700;font-style:normal;font-display:swap}
+@font-face{font-family:"Jost";src:url(fonts/jost-latin-wght-italic.woff2) format("woff2");font-weight:300 700;font-style:italic;font-display:swap}
+@font-face{font-family:"Barlow Condensed";src:url(fonts/barlow-condensed-latin-500-normal.woff2) format("woff2");font-weight:500;font-display:swap}
+@font-face{font-family:"Barlow Condensed";src:url(fonts/barlow-condensed-latin-600-normal.woff2) format("woff2");font-weight:600;font-display:swap}
+
+:root{
+  --papier:#F4F1EA; --papier-2:#EAE5DA; --encre:#263133; --gris:#5E6A6C;
+  --ocean:#2F5E62; --ocean-fonce:#234A4D; --ecume:#DCE7E4; --corail:#D2643A; --corail-fonce:#B5502A;
+  --trait:#D6D0C3;
+  --f-titre:"Jost",system-ui,sans-serif; --f-texte:"Jost",system-ui,sans-serif; --f-etiq:"Barlow Condensed","Arial Narrow",sans-serif;
+  --max:1120px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--papier);color:var(--encre);font:400 17px/1.6 var(--f-texte)}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--corail);outline-offset:3px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+.etiq{font-family:var(--f-etiq);font-weight:600;font-size:.82rem;letter-spacing:.22em;text-transform:uppercase;color:var(--corail)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+
+/* En-tête */
+.top{border-bottom:1px solid var(--trait)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--f-etiq);font-weight:600;letter-spacing:.24em;font-size:1rem;text-transform:uppercase;white-space:nowrap}
+.logo svg{width:26px;height:26px;flex:none}
+.nav{display:flex;gap:22px;font-size:.95rem}
+.nav a{text-decoration:none;color:var(--gris)}
+.nav a:hover{color:var(--encre)}
+
+/* Accueil */
+.hero{padding:56px 0 72px}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.hero h1{font-family:var(--f-titre);font-weight:700;font-size:clamp(3.2rem,9vw,6.4rem);line-height:.92;letter-spacing:.04em;margin:14px 0 6px;text-transform:uppercase}
+.hero h1 span{display:block;font-weight:400;font-size:.42em;letter-spacing:0;text-transform:none;margin-top:.25em}
+.hero .lede{font-size:1.15rem;color:var(--gris);font-style:italic;max-width:34ch;margin:18px 0 28px}
+.prix{font-family:var(--f-etiq);font-weight:500;letter-spacing:.06em;color:var(--gris);margin:0 0 14px}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 22px;border-radius:2px;text-decoration:none;font-family:var(--f-etiq);font-weight:600;font-size:1.02rem;letter-spacing:.14em;text-transform:uppercase;transition:background .15s,color .15s,border-color .15s}
+.btn-plein{background:var(--corail);color:#fff}
+.btn-plein:hover{background:var(--corail-fonce)}
+.btn-ligne{border:1.5px solid var(--encre);color:var(--encre)}
+.btn-ligne:hover{background:var(--encre);color:var(--papier)}
+.note{font-size:.88rem;color:var(--gris);margin:14px 0 0}
+
+.cadre{background:var(--ocean);padding:clamp(22px,4vw,44px);position:relative}
+.cadre img{box-shadow:0 18px 40px rgba(0,0,0,.35);margin:0 auto;max-height:76vh;width:auto}
+.cadre::after{content:"";position:absolute;inset:10px;border:1px solid rgba(255,255,255,.18);pointer-events:none}
+
+/* Bande océan */
+.bande{background:var(--ocean);color:var(--papier)}
+.bande .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;padding-top:34px;padding-bottom:34px}
+.chiffre{font-family:var(--f-titre);font-weight:600;font-size:2.2rem;line-height:1}
+.chiffre-l{font-family:var(--f-etiq);font-weight:500;letter-spacing:.14em;text-transform:uppercase;font-size:.86rem;color:var(--ecume);margin-top:6px}
+
+/* Sections */
+section{scroll-margin-top:12px}
+.sec{padding:84px 0}
+.sec h2{font-family:var(--f-titre);font-weight:500;font-size:clamp(1.9rem,4vw,2.6rem);line-height:1.15;margin:10px 0 18px;max-width:22ch}
+.sec p{max-width:62ch}
+.deux{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.liste{list-style:none;padding:0;margin:22px 0 0;display:grid;gap:14px}
+.liste li{padding-left:26px;position:relative}
+.liste li::before{content:"";position:absolute;left:0;top:.62em;width:12px;height:12px;border-radius:50%;background:var(--corail);box-shadow:0 0 0 3px var(--papier),0 0 0 4px var(--corail)}
+.liste b{font-weight:600}
+.details{display:grid;gap:16px}
+.details figure{margin:0;border:1px solid var(--trait);background:#fff}
+.details figcaption{font-size:.85rem;color:var(--gris);padding:8px 12px}
+.fiche{margin-top:28px;border-top:1px solid var(--trait)}
+.fiche div{display:flex;justify-content:space-between;gap:16px;padding:10px 0;border-bottom:1px solid var(--trait);font-size:.96rem}
+.fiche dt{color:var(--gris)}
+.fiche dd{margin:0;text-align:right;font-weight:500}
+
+.alt{background:var(--papier-2)}
+.themes{display:flex;flex-wrap:wrap;gap:10px;margin:26px 0 0;padding:0;list-style:none}
+.themes li{font-family:var(--f-etiq);font-weight:600;letter-spacing:.14em;text-transform:uppercase;font-size:.95rem;padding:9px 16px;border:1.5px solid var(--ocean);color:var(--ocean)}
+.themes li.actif{background:var(--ocean);color:var(--papier)}
+
+.contact{background:var(--encre);color:var(--papier)}
+.contact .etiq{color:#F08A5D}
+.contact p{color:#C9CFCF}
+.contact .btn-ligne{border-color:var(--papier);color:var(--papier)}
+.contact .btn-ligne:hover{background:var(--papier);color:var(--encre)}
+
+/* Pied de page */
+.pied{padding:28px 0;font-size:.88rem;color:var(--gris)}
+.pied .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+.pied a{color:var(--gris)}
+
+/* Page texte (mentions légales) */
+.texte{padding:56px 0 80px}
+.texte .wrap{max-width:760px}
+.texte h1{font-family:var(--f-titre);font-weight:500;font-size:clamp(2rem,5vw,2.8rem);margin:8px 0 28px}
+.texte h2{font-family:var(--f-etiq);font-weight:600;letter-spacing:.18em;text-transform:uppercase;font-size:1rem;color:var(--ocean);margin:36px 0 8px}
+.texte p{margin:0 0 10px}
+
+@media (max-width:860px){
+  .hero{padding:32px 0 56px}
+  .hero .wrap,.deux{grid-template-columns:1fr;gap:36px}
+  .hero .visuel{order:-1}
+  .cadre img{max-height:none;width:100%}
+  .bande .wrap{grid-template-columns:repeat(2,1fr)}
+  .sec{padding:60px 0}
+}
+@media (max-width:520px){
+  body{font-size:16px}
+  .wrap{padding:0 16px}
+  .nav{gap:14px;font-size:.9rem}
+  .nav .opt{display:none}
+  .logo{font-size:.9rem;letter-spacing:.18em}
+  .btn{width:100%;justify-content:center}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
