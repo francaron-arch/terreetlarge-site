@@ -129,3 +129,11 @@ section{scroll-margin-top:12px}
   .soleil{width:44px;height:44px;margin-top:20px}
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* Questions fréquentes */
+.faq{display:grid;gap:10px;margin-top:22px;max-width:760px}
+.faq details{border:1px solid var(--trait);background:#fff;padding:0 18px}
+.faq summary{cursor:pointer;padding:15px 0;font-weight:500;list-style-position:inside}
+.faq summary::marker{color:var(--corail-fonce)}
+.faq details[open] summary{border-bottom:1px solid var(--trait)}
+.faq details p{margin:12px 0 16px;color:var(--gris)}
